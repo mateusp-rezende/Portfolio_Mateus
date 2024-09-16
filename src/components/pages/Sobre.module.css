@@ -1,0 +1,134 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+}
+.card{
+  background-color: var(--black-background);
+  padding: 2rem;
+  border-radius: 16px;     
+  font-family: 'Inter', sans-serif;
+  box-shadow: 
+  rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset, 
+  rgba(18, 0, 53, 0.15) 0 2px 4px, 
+  rgba(15, 1, 43, 0.1) 2px 4px, 
+  rgba(13, 9, 22, 0.1) 0 4px 8px, 
+  rgba(18, 3, 46, 0.1) 0 8px 16px, 
+  rgb(85, 0, 255) 0 12px 24px;
+}
+.img {
+  object-fit: cover;
+  width: 100%; /* Para mobile, a imagem ocupará toda a largura disponível */
+  max-width: 400px; /* Limita a largura máxima */
+  margin: 1em;
+  height: auto;
+}
+
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  
+}
+h1{
+  color: #5D17E9!important;
+}
+h2 {
+  margin-bottom: 24px;
+  color: #d1d1d1!important;
+  font-size: 28px;
+ 
+}
+
+p {
+  color: #e7e7e7;
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.sobre_container ul {
+  list-style-type: circle;
+}
+
+.sobre_container li {
+  margin-bottom: 10px;
+}
+
+.cardcenter {
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+}
+.infoList {
+  margin-top: 1em;
+  list-style-type: none; /* Remove bullets da lista principal */
+}
+
+.infoList li {
+  color: #d1d1d1;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.infoList ul {
+  margin-top: 0.5em;
+  margin-left: 1.5em;
+  list-style-type: disc; /* Aplica bullets nas listas aninhadas */
+}
+
+.infoList ul li {
+  font-size: 16px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre_container {
+    padding: 20px;
+  }
+  .card{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     max-width: 90vw;
+  }
+
+  .body {
+    display: flex;
+    width: 100% !important;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+   padding: 0 !important;
+   margin: 0 !important;
+  }
+
+  .img {
+    width: 80%; /* Reduz a largura da imagem no mobile */
+    max-width: 250px; /* Ajusta a largura máxima para telas menores */
+    margin: 1em auto; /* Centraliza a imagem */
+  }
+
+  h2 {
+    font-size: 24px; /* Reduz o tamanho da fonte para mobile */
+  }
+
+  p {
+    font-size: 14px; /* Reduz o tamanho da fonte para textos */
+    margin-bottom: 20px; /* Ajusta o espaçamento inferior */
+  }
+
+  .row {
+    flex-direction: column; /* Empilha os elementos em vez de lado a lado */
+    align-items: flex-start;
+  }
+
+  .cardcenter {
+    border-left: none;
+    border-right: none;
+  }
+}
