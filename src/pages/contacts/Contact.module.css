@@ -1,0 +1,109 @@
+.contact_container {
+    width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #303030;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 16px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    
+  }
+  
+  h2 {
+    margin-bottom: 24px;
+    color: #ffffff;
+    font-size: 28px;
+  }
+  
+  p {
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  
+  li {
+    margin: 10px 0;
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  li a{
+    margin: 10px 0;
+    color: #ffffff;
+    font-size: 18px;
+  } 
+  li a:hover{
+    color: #5D17E9;
+  }
+  li::before {
+    
+    margin-right: 8px;
+    color: #5D17E9;
+  }
+  
+  /* Adicionando estilos específicos para ícones e alinhamento */
+  .icon {
+    vertical-align: middle;
+    margin-right: 8px;
+   
+  }
+  
+  /* Estilização do formulário */
+  .form_container {
+  
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+ 
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .contact_container {
+      width: 90vw;
+      padding: 20px;
+    
+      h2 {
+      font-size: 1.5rem;
+   }
+
+    p {
+      font-size: 0.875rem;
+   }
+
+    li, li a {
+      font-size: 0.9375rem;
+    }
+  }
+  }
+  

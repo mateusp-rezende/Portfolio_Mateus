@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    background-color: var(--black);
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin: 0 auto;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.min_height {
+    min-height: 60vh;
+}
+
+.start {
+    justify-content: flex-start;
+}
+
+.column {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Empilha itens verticalmente */
+        justify-content: center; /* Centraliza o conteúdo verticalmente */
+        align-items: center; /* Centraliza o conteúdo horizontalmente */
+        padding: 1rem; /* Adiciona um pouco de padding */
+    }
+
+    /* Ajusta o layout dos itens dentro do container se necessário */
+    .start {
+        justify-content: center; /* Centraliza os itens na tela */
+    }
+
+    /* Se você tiver itens específicos que precisam de ajustes */
+    .column {
+        flex-direction: column; /* Certifica-se de que a direção da coluna é mantida */
+        align-items: center; /* Centraliza itens dentro da coluna */
+    }
+}

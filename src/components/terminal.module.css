@@ -1,0 +1,90 @@
+@keyframes blinkCursor {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+  
+  @keyframes typeAndDelete {
+    0%, 10% {
+      width: 0;
+    }
+    45%, 55% {
+      width: 12em; /* Ajustei a largura para comportar mais texto */
+    }
+    90%, 100% {
+      width: 0;
+    }
+  }
+  
+  .terminalLoader {
+    border: 0.3em solid #333;
+    background-color: #1a1a1a;
+    color: rgb(140, 0, 255);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    padding: 2em 1.5em; /* Ajustado para dar mais espaço */
+    width: 15em; /* Ligeiramente maior para caber mais texto */
+    margin: 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Aprofundei a sombra */
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .terminalHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2em; /* Aumentei a altura para mais espaço */
+    background-color: #333;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 0 0.6em; /* Mais espaço para os controles */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .terminalControls {
+    display: flex;
+  }
+  
+  .control {
+    display: inline-block;
+    width: 0.8em; /* Maior para melhor visibilidade */
+    height: 0.8em;
+    margin-left: 0.5em;
+    border-radius: 50%;
+    background-color: #777;
+  }
+  
+  .terminalClose {
+    background-color: #e33;
+  }
+  
+  .controlMinimize {
+    background-color: #ee0;
+  }
+  
+  .controlMaximize {
+    background-color: #0b0;
+  }
+  
+  .terminalTitle {
+    color: #eee;
+    font-size: 1em; /* Aumentei o título */
+  }
+  
+  .text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid rgb(133, 3, 255); /* Cursor */
+    animation: typeAndDelete 6s steps(20) infinite, /* Mais steps para suavizar a digitação */
+               blinkCursor 0.6s step-end infinite alternate; /* Pisca um pouco mais devagar */
+    margin-top: 2.5em; /* Moved down to leave space for header */
+  }
+  
