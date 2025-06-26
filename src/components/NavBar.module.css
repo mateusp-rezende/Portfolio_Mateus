@@ -1,75 +1,76 @@
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: var(--black-background);
-    padding:  1rem 0 2rem 0 !important;
+    padding: 1rem 2rem;
     width: 100%;
-    margin: 0 !important;
-}
-
-.list{
-    display: flex;
-    list-style-type: none;
-    text-align: center;
-}
-
-.image{
+    position: relative;
+    z-index: 100;
+  }
+  
+  .menuToggle {
+    display: none;
+    cursor: pointer;
+    z-index: 101;
+    color: white;
+  }
+  
+  .image {
     width: 7rem;
     height: auto;
-    padding: 0;
-    margin: 0;
-    background-size: cover;
-   
-}
-
-.item{
-   margin: 0 1em ;
- 
-}
-
-.item svg{
-    font-size: 1em;
-    cursor: pointer;
-}
-
-.item a{
-    padding: 10px 20px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-}
-.item a:hover{
-    background-color: #DDDDDD;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color:#5D17EB;
-    
-}
-
-
-@media (max-width: 768px){
+    z-index: 100;
+  }
+  
+  .list {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+  
+  /* Estilos para mobile */
+  @media (max-width: 768px) {
+    .menuToggle {
+      display: block;
+      
+    }
+  
+    .list {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 70%;
+      height: 100vh;
+      background: #33088b;
+      flex-direction: column;
+      padding: 5rem 1rem;
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
     .image {
-        display: block;
-        position: relative;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -10%);
+        width: 6rem;
+        height: auto;
+        z-index: 100;
+      }
+  
+    .listOpen {
+      left: 0;
     }
-    .navbar{
-        display: flex;
-        justify-content: flex-start;
-        align-items: baseline;
-        flex-direction: column;
-        padding: 3em 1em;
-        width: 100%;
-        margin: 0;
+  
+    .menuOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.123);
+      z-index: 98;
+      opacity: 0;
+      transition: all 0.3s ease;
     }
-    .item a{
-        padding-top: 1em;
-        color: #fff;
-        text-decoration: none;
-        font-size: .8em;
-        text-align: center;
+  
+    .overlayOpen {
+      width: 100%;
+      opacity: 1;
     }
-}
+  }

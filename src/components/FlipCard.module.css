@@ -3,7 +3,7 @@
     width: 30rem;
     height: 30rem;
     margin: 2em 1em;
-  
+    
     cursor: pointer; /* Indica que o cartão é clicável */
 }
 
@@ -43,17 +43,30 @@
     transform: rotateY(-180deg);
 }
 
+.flip_card_back {
+    h2 {
+        display: -webkit-box;
+       
+        -webkit-box-orient: vertical;
+        white-space: normal; /* Permite quebra */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
 
     .flip_card {
 
         img {
-    width: 50%;
-   height: 50%;
-    border-radius: 30px;
-    text-align: center;
-    height: auto;
-    overflow: hidden;
-    transition: all 400ms;
+            display: block; /* Remove espaços abaixo da imagem */
+            margin: 0 auto; /* Centraliza horizontalmente */
+            width: 50%; /* Mantém sua largura atual */
+            height: auto; /* Mantém proporção */
+            border-radius: 30px;
+            /* Mantém suas outras propriedades existentes */
+            text-align: center; /* Para alinhamento adicional */
+            overflow: hidden;
+            transition: all 400ms;
 }
  h1 {
     font-size: 1.5vw; /* Responsivo baseado na largura da tela */
@@ -121,11 +134,8 @@
     
     img {
         width: 10em;
-        height: 10em;
-        text-align: center;
-        height: auto;
-        overflow: hidden;
-        transition: all 400ms;
+        height: auto; /* Mantém proporção */
+        margin: 0 auto; /* Garante centralização */
     }
     }
 }

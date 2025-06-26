@@ -9,8 +9,8 @@ function Sobre() {
       <div className={styles.row}>
       <img className={styles.img} src={img7} alt="Foto de Mateus de Paula Rezende" />
         <div className={styles.card}>
-          <h1>Mateus de Paula Rezende</h1>
-          <p className={styles.subtitle}>Desenvolvedor Web| Estudante de Engenharia da Computação</p>
+          <h1>MATEUS DE PAULA REZENDE</h1>
+          <p className={styles.subtitle}>Desenvolvimento Web | Engenharia da Computação</p>
           <ul className={styles.infoList}>
           <li><strong>Formação Acadêmica:</strong></li>
             <li> <strong> Técnico em Informática para Internet</strong> - IF Goiano<br />  Concluído em 2023</li>

@@ -3,24 +3,38 @@
   flex-direction: column;
   margin: 2em;
 }
-.card{
+.card {
   background-color: var(--black-background);
   padding: 2rem;
-  border-radius: 16px;     
+  border-radius: 16px;
   font-family: 'Inter', sans-serif;
-  box-shadow: 
-  rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset, 
-  rgba(18, 0, 53, 0.15) 0 2px 4px, 
-  rgba(15, 1, 43, 0.1) 2px 4px, 
-  rgba(13, 9, 22, 0.1) 0 4px 8px, 
-  rgba(18, 3, 46, 0.1) 0 8px 16px, 
-  rgb(85, 0, 255) 0 12px 24px;
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(93, 23, 235), /* Borda sutil */
+    0 4px 32px -8px rgba(93, 23, 235), /* Brilho externo */
+    0 8px 16px -16px rgba(255, 255, 255, 0.2), /* Destaque superior */
+    inset 0 -8px 32px -16px rgba(93, 23, 235), /* Brilho interno inferior */
+    inset 0 8px 16px -16px rgba(255, 255, 255, 0.1); /* Claridade interna superior */
+  
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 2px rgba(93, 23, 235, 0.6),
+    0 8px 48px -8px rgba(93, 23, 235, 0.8),
+    0 12px 24px -24px rgba(255, 255, 255, 0.1),
+    inset 0 -12px 40px -16px rgba(93, 23, 235),
+    inset 0 12px 24px -16px rgba(255, 255, 255, 0.2);
+}
+
+
 .img {
   object-fit: cover;
-  width: 100%; /* Para mobile, a imagem ocupará toda a largura disponível */
-  max-width: 400px; /* Limita a largura máxima */
-  margin: 4em;
+  width: 100%; 
+  max-width: 400px; 
+  margin: 6em;
   height: auto;
 }
 

@@ -18,28 +18,33 @@ function Home() {
           href="https://microlaser.vercel.app/"
           src={microlaser}
           nome="MICROLASER"
-          Descricao="O site Microlaser oferece serviços e produtos médico-hospitalares, sendo representante em Goiás há mais de 30 anos. Ele permite agendamentos técnicos e orçamentos online, além de oferecer contato via WhatsApp e redes sociais. Foi desenvolvido utilizando JavaScript, CSS, Bootstrap, HTML, e uma API de CEP para facilitar o preenchimento automático de endereços no processo de agendamento e solicitação de orçamentos, proporcionando uma experiência mais eficiente para o usuário."
+          Descricao="Plataforma web com: • Menu de Serviços/Produtos • Agendamento • Integração com APIs (CEP, WhatsApp) • Tech Stack: Jquery, Bootstrap 5, HTML5 semântico"
         />
         
         <FlipCard
           href="https://github.com/mateusp-rezende/Caixa2Bank-projeto"
           src={c2b}
-          nome="Caixa 2 bank"
-          Descricao="O projeto é um sistema CRUD que simula um banco, permitindo enviar e receber dinheiro, além de gerenciar usuários. Foi desenvolvido com Java Spring, HTML, CSS e JavaScript, aplicando conceitos de POO, engenharia de requisitos e design UX/UI para oferecer uma experiência funcional e interativa."
+          nome="CAIXA 2 BANK"
+          Descricao="Sistema bancário didático com: • Painel administrativo • Transações financeiras • Histórico operacional • Tech Stack: Spring Boot (Java 11), MVC Pattern, REST API, Fetch API"
         />
 
         <FlipCard
           href="https://mateus-projetos.vercel.app/"
           src={logo}
-          nome="PORTFOLIO"
-          Descricao="site desenvolvido em React com o objetivo de organizar e exibir os projetos que desenvolvi como programador. Nele, você encontrará uma seleção dos meus trabalhos, desde aplicativos web até projetos pessoais"
+          nome="PORTFÓLIO"
+          Descricao="Single Page Application construída com: • React 18 • Vite • CSS Modules • Framer Motion (animações). Exibe meus projetos com carregamento otimizado, dark/light mode e design system consistente, demonstrando boas práticas de desenvolvimento frontend"
        />
 
         <FlipCard
           href="https://github.com/mateusp-rezende/biblioteca-em-C"
           src={simboloc}
-          nome="BIBLIOTECA-C"
-          Descricao="Essa atividade foi desenvolvida com o propósito de aprofundar meus conhecimentos em C, explorando o uso de ponteiros e a criação de funções. Ela oferece uma variedade de funcionalidades, desde cálculos matemáticos até verificações de palíndromos e manipulação de vetores e matrizes."
+          nome="BIBLIOTECA EM C"
+          Descricao="Biblioteca em C puro implementando estruturas de dados e algoritmos avançados, incluindo:
+• Manipulação de ponteiros e alocação dinâmica
+• Operações com matrizes (transposição, multiplicação)
+• Verificação de palíndromos com otimização de memória
+• Funções matemáticas complexas
+• Gerenciamento manual de memória sem vazamentos"
        />
         
       </section>
