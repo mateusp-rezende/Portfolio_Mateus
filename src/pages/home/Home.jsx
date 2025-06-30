@@ -21,12 +21,7 @@ function Home() {
           nome="MICROLASER"
           Descricao="Plataforma web com: • Menu de Serviços/Produtos • Agendamento • Integração com APIs (CEP, WhatsApp) • Tech Stack: Jquery, Bootstrap 5, HTML5 semântico"
         />
-        <FlipCard
-          href="https://github.com/mateusp-rezende/GerenciadorDeVagas"
-          src={gerenciadordevagas}
-           nome="GESTÃO DE VAGAS"
-         Descricao="API de cadastro e gerenciamento de empresas e vagas de emprego • Validação e tratamento de erros • Relacionamento entre entidades • Segurança com autenticação JWT • Tech Stack: Spring Boot (Java 17), JPA, Spring Security, REST API"/>
-        />
+      
 
         
         <FlipCard
@@ -54,6 +49,12 @@ function Home() {
 • Funções matemáticas complexas
 • Gerenciamento manual de memória sem vazamentos"
        />
+          <FlipCard
+          href="https://github.com/mateusp-rezende/GerenciadorDeVagas"
+          src={gerenciadordevagas}
+           nome="API GESTÃO DE VAGAS"
+         Descricao="API de cadastro e gerenciamento de empresas e vagas de emprego • Validação e tratamento de erros • Relacionamento entre entidades • Segurança com autenticação JWT • Tech Stack: Spring Boot (Java 17), JPA, Spring Security, REST API"/>
+        />
         
       </section>
     </div>
