@@ -24,7 +24,7 @@ function Home() {
         <FlipCard
           href="https://github.com/mateusp-rezende/GerenciadorDeVagas"
           src={gerenciadordevagas}
-           nome="API de Gestão de Vagas"
+           nome="API DE GESTAO DE VAGAS"
          Descricao="API de cadastro e gerenciamento de empresas e vagas de emprego • Validação e tratamento de erros • Relacionamento entre entidades • Segurança com autenticação JWT • Tech Stack: Spring Boot (Java 17), JPA, Spring Security, REST API"/>
         />
 
