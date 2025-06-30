@@ -5,12 +5,23 @@
     --grey: #303030;
     --purple: #5D17E9;
 }
-.home_products{
+/*.home_products{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     overflow: hidden;
     align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    padding-top: 50px;
+}*/
+.home_products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    /* align-items: center;  */
+    align-items: flex-start; 
     justify-content: space-evenly;
     margin: 0;
     padding-top: 50px;
