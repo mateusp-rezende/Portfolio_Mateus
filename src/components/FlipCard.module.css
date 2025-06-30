@@ -1,150 +1,281 @@
-/* Variáveis globais, se houver, ficam no seu arquivo :root {} */
-:root{
-    --black-background: rgb(18,18,18);
-    --white: #fafafa;
-    --black: #000;
-    --grey: #303030;
-    --purple: #5D17E9;
+.flip_card {
+
+    perspective: 5000px;
+
+    width: 30rem;
+
+    height: 30rem;
+
+    margin: 1em 1em;
+
+    
+
+    cursor: pointer; /* Indica que o cartão é clicável */
+
 }
 
-.flip_card {
-    perspective: 5000px;
-    width: 30rem;
-    height: 30rem;
-    margin: 2em 1em; /* Margem entre os cards */
-    cursor: pointer;
-    box-sizing: border-box; /* Inclui padding e border na largura/altura total */
-}
+
 
 .flip_card_flipped .flip_card_inner {
-    transform: rotateY(-180deg);
+
+    transform: rotateY(-180deg); /* Mantém o cartão girado quando a classe é adicionada */
+
 }
+
+
 
 .flip_card_inner {
-    position: relative;
-    transition: transform 1.5s;
-    transform-style: preserve-3d;
+
+    position: relative;
+
+    transition: transform 1.5s; /* Suavização da rotação */
+
+    transform-style: preserve-3d;
+
 }
+
+
 
 .flip_card_back, .flip_card_front {
-    perspective: 5000px;
-    width: 100%; /* Ocupa 100% da largura do .flip_card pai */
-    height: 100%; /* Ocupa 100% da altura do .flip_card pai */
-    background-color: var(--black-background);
-    position: absolute;
-    backface-visibility: hidden;
-    border-radius: 16px;
 
-    font-family: 'Inter', sans-serif;
-    box-shadow:
-    rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset,
-    rgba(18, 0, 53, 0.15) 0 2px 4px,
-    rgba(15, 1, 43, 0.1) 2px 4px,
-    rgba(13, 9, 22, 0.1) 0 4px 8px,
-    rgba(18, 3, 46, 0.1) 0 8px 16px,
-    rgb(85, 0, 255) 0 12px 24px;
+    perspective: 5000px;
 
-    /* >>>>> PROPRIEDADES PARA ALINHAR CONTEÚDO E DAR ESPAÇAMENTO <<<<< */
-    display: flex;          /* Transforma em container flexbox */
-    flex-direction: column; /* Empilha os filhos verticalmente */
-    align-items: center;    /* Centraliza os itens HORIZONTALMENTE */
-    justify-content: space-between; /* ALINHA O TOPO E A BASE, DISTRIBUI O RESTO */
-    padding: 1.5em;           /* Adiciona um padding uniforme para afastar das bordas */
-    box-sizing: border-box; /* Garante que o padding seja incluído na width/height */
-    text-align: center;     /* Garante que o texto interno seja centralizado */
+    width: 30rem;
+
+    height: 30rem;
+
+    padding: 0 1em;
+
+    background-color: var(--black-background);
+
+    position: absolute;
+
+    backface-visibility: hidden;
+
+    text-align: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    
+
+    font-family: 'Inter', sans-serif;
+
+    box-shadow: 
+
+    rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset, 
+
+    rgba(18, 0, 53, 0.15) 0 2px 4px, 
+
+    rgba(15, 1, 43, 0.1) 2px 4px, 
+
+    rgba(13, 9, 22, 0.1) 0 4px 8px, 
+
+    rgba(18, 3, 46, 0.1) 0 8px 16px, 
+
+    rgb(85, 0, 255) 0 12px 24px;
+
 }
+
+
 
 .flip_card_back {
-    transform: rotateY(-180deg);
-}
 
-/* Estilos específicos para elementos dentro do FlipCard */
-/* Removendo margens e paddings padrão para melhor controle com Flexbox */
-.flip_card h1,
-.flip_card h2,
-.flip_card img {
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove paddings padrão */
-    box-sizing: border-box;
-}
+    transform: rotateY(-180deg);
 
-.flip_card_back h2 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* Padding para a descrição */
-    padding: 0.5em 0;
-    flex-grow: 1; /* Permite que o h2 ocupe o espaço extra se o conteúdo for pequeno */
-    display: flex; /* Para centralizar o texto internamente */
-    align-items: center;
-    justify-content: center;
-}
-
-.flip_card img {
-    display: block;
-    width: 50%; /* Mantém a largura da imagem */
-    height: auto;
-    max-height: 8rem; /* Limita a altura máxima da imagem, talvez 10rem fosse demais */
-    object-fit: contain; /* Garante que a imagem caiba inteira */
-    border-radius: 30px;
-    transition: all 400ms;
-    flex-shrink: 0; /* Impede a imagem de encolher */
-    margin-top: 1em; /* Espaçamento superior para afastar do h1 */
-    margin-bottom: 1em; /* Espaçamento inferior para afastar do botão */
-}
-
-.flip_card h1 {
-    /* >>>>> DIMINUI O TAMANHO DO H1 (AJUSTADO NOVAMENTE) <<<<< */
-    font-size: 1.1vw; /* Um pouco menor para desktop */
-    color: var(--purple);
-    text-align: center;
-    line-height: 1.2;
-    padding-bottom: 0.5em; /* Espaçamento inferior para o h1 */
-}
-
-/* Estilos para o botão SubmitBtn - importante garantir que ele não tenha margens indesejadas */
-.flip_card button { /* Assumindo que o componente SubmitBtn renderiza um <button> */
-    margin-top: 1em; /* Pequena margem para afastar da imagem/descrição */
-    margin-bottom: 0; /* Zera margem inferior */
-    flex-shrink: 0; /* Impede o botão de encolher */
 }
 
 
-/* Ajustes responsivos para telas menores */
+
+.flip_card_back {
+
+    h2 {
+
+        display: -webkit-box;
+
+       
+
+        -webkit-box-orient: vertical;
+
+        white-space: normal; /* Permite quebra */
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+    }
+
+}
+
+
+
+
+
+    .flip_card {
+
+
+
+        img {
+
+            display: block; /* Remove espaços abaixo da imagem */
+
+            margin: 0 auto; /* Centraliza horizontalmente */
+
+            width: 50%; /* Mantém sua largura atual */
+
+            height: auto; /* Mantém proporção */
+
+            border-radius: 30px;
+
+            /* Mantém suas outras propriedades existentes */
+
+            text-align: center; /* Para alinhamento adicional */
+
+            overflow: hidden;
+
+            transition: all 400ms;
+
+}
+
+ h1 {
+
+    font-size: 1.1vw; /* Responsivo baseado na largura da tela */
+
+    color: var(--purple);
+
+   padding-top: 1em;
+
+}
+
+
+
+ h2 {
+
+    font-size: 1.5vw; /* Responsivo baseado na largura da tela */
+
+    color: var(--white);
+
+    padding: .5em;
+
+}
+
+    }
+
+
+
+
+
+
+
+/* Ajustes apenas para mobile */
+
 @media (max-width: 768px) {
-    .flip_card {
-        perspective: 1000px;
-        width: 20rem;
-        height: 20rem;
-    }
 
-    .flip_card_back, .flip_card_front {
-        width: 100%;
-        height: 100%;
-        padding: 1em; /* Padding ajustado para mobile */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between; /* Volta a alinhar topo e base para mobile */
-    }
+    .flip_card {
 
-    .flip_card h1 {
-        /* >>>>> TAMANHO DO H1 PARA MOBILE (AJUSTADO NOVAMENTE) <<<<< */
-        font-size: 3vw; /* Um pouco menor para mobile */
-        padding: 0.5em 0.6em; /* Padding ajustado para mobile */
-    }
+        perspective: 1000px; /* Aumentar a perspectiva no mobile */
 
-    .flip_card h2 {
-        font-size: 3.2vw;
-        padding: 0.6em;
-    }
+        width: 20rem;
 
-    .flip_card img {
-        width: 10em;
-        height: auto;
-        margin-top: 0.8em;
-        margin-bottom: 0.8em;
-    }
+        height: 20rem;
+
+        margin-bottom: 2rem;
+
+    }
+
+
+
+    .flip_card_inner {
+
+        transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1); /* Ajuste de suavização */
+
+        transform-style: preserve-3d;
+
+    }
+
+
+
+    .flip_card_flipped .flip_card_inner {
+
+        transform: rotateY(-180deg); /* Mantém o cartão girado quando a classe é adicionada */
+
+    }
+
+
+
+    .flip_card_back, .flip_card_front {
+
+        width: 20rem;
+
+        height: 20rem;
+
+        backface-visibility: hidden;
+
+        padding: 1.2em;
+
+        text-align: center;
+
+        justify-content: center;
+
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+    }
+
+
+
+    .flip_card_back {
+
+        transform: rotateY(-180deg);
+
+    }
+
+
+
+    .flip_card {
+
+        h1 {
+
+            font-size: 4vw; /* Tamanho ajustado para mobile */
+
+            padding: 0 .6em;
+
+        }
+
+
+
+        h2 {
+
+            font-size: 3.2vw; /* Tamanho ajustado para mobile */
+
+            padding: .6em;
+
+        }
+
+        p {
+
+            font-size: 0.875rem; /* Tamanho do parágrafo ajustado */
+
+        }
+
+
+
+    
+
+    img {
+
+        width: 10em;
+
+        height: auto; /* Mantém proporção */
+
+        margin: 0 auto; /* Garante centralização */
+
+    }
+
+    }
+
 }
