@@ -1,129 +1,87 @@
-/* Variáveis globais, se houver, ficam no seu arquivo :root {} */
-:root{
-    --black-background: rgb(18,18,18);
-    --white: #fafafa;
-    --black: #000;
-    --grey: #303030;
-    --purple: #5D17E9;
-}
-
-/* Container principal do FlipCard */
 .flip_card {
     perspective: 5000px;
     width: 30rem;
-    height: 30rem; /* Mantemos a altura fixa */
-    margin: 2em 1em; /* Margem entre os cards */
-    cursor: pointer;
-    /* border: 1px solid purple; /* Descomente para depuração do card */
+    height: 30rem;
+    margin: 2em 1em;
+    
+    cursor: pointer; /* Indica que o cartão é clicável */
 }
 
-/* Efeito de virar do cartão */
 .flip_card_flipped .flip_card_inner {
-    transform: rotateY(-180deg);
+    transform: rotateY(-180deg); /* Mantém o cartão girado quando a classe é adicionada */
 }
 
 .flip_card_inner {
     position: relative;
-    transition: transform 1.5s;
+    transition: transform 1.5s; /* Suavização da rotação */
     transform-style: preserve-3d;
 }
 
-/* Estilos para a frente e o verso do cartão */
 .flip_card_back, .flip_card_front {
     perspective: 5000px;
     width: 30rem;
     height: 30rem;
+    padding: 0 1em;
     background-color: var(--black-background);
     position: absolute;
     backface-visibility: hidden;
     text-align: center;
+    justify-content: center;
     border-radius: 16px;
-
+    
     font-family: 'Inter', sans-serif;
-    box-shadow:
-    rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset,
-    rgba(18, 0, 53, 0.15) 0 2px 4px,
-    rgba(15, 1, 43, 0.1) 2px 4px,
-    rgba(13, 9, 22, 0.1) 0 4px 8px,
-    rgba(18, 3, 46, 0.1) 0 8px 16px,
+    box-shadow: 
+    rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset, 
+    rgba(18, 0, 53, 0.15) 0 2px 4px, 
+    rgba(15, 1, 43, 0.1) 2px 4px, 
+    rgba(13, 9, 22, 0.1) 0 4px 8px, 
+    rgba(18, 3, 46, 0.1) 0 8px 16px, 
     rgb(85, 0, 255) 0 12px 24px;
-
-    /* REVISÃO DAS PROPRIEDADES FLEXBOX E PADDING */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between; /* Mantém a distribuição vertical */
-    padding: 1.5em 1em; /* Padding interno consistente */
-    box-sizing: border-box; /* Garante que padding e border sejam incluídos na width/height */
-    /* border: 1px solid red; /* Descomente para depuração da frente/verso */
 }
 
-/* Estilo para o verso do cartão (inicialmente girado) */
+
+
 .flip_card_back {
     transform: rotateY(-180deg);
 }
 
-/* Estilos específicos para elementos dentro do FlipCard */
-.flip_card_back h2 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.flip_card_back {
+    h2 {
+        display: -webkit-box;
+       
+        -webkit-box-orient: vertical;
+        white-space: normal; /* Permite quebra */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
-/* Estilos para a imagem dentro do FlipCard */
-.flip_card img {
-    display: block;
-    margin: 0 auto; /* Centraliza horizontalmente */
-    width: 50%;
-    height: auto;
-    max-height: 10rem; /* Adicionado um max-height para a imagem para limitar seu crescimento */
-    object-fit: contain; /* Use 'contain' para garantir que a imagem caiba inteira */
-    border-radius: 30px;
-    overflow: hidden;
-    transition: all 400ms;
-    /* border: 1px solid blue; /* Descomente para depuração da imagem */
-}
 
-/* Estilos para os títulos (h1) dentro do FlipCard */
+    .flip_card   img {
+            display: block; /* Remove espaços abaixo da imagem */
+            margin: 0 auto; /* Centraliza horizontalmente */
+            width: 50%; /* Mantém sua largura atual */
+            height: auto; /* Mantém proporção */
+            border-radius: 30px;
+            /* Mantém suas outras propriedades existentes */
+            text-align: center; /* Para alinhamento adicional */
+            overflow: hidden;
+            transition: all 400ms;
+
+    }
 .flip_card h1 {
-    font-size: 20px;
+    font-size: 1.5vw;
     color: var(--purple);
-    margin: 0; /* REMOVER TODAS AS MARGENS PADRÃO */
-    padding-top: 0.5em; /* Pequeno padding superior para afastar do topo do card */
-    padding-bottom: 0.5em; /* Pequeno padding inferior para afastar da imagem/descrição */
-    text-align: center;
-    line-height: 1.2;
-    /* border: 1px solid green; /* Descomente para depuração do h1 */
+    /* REMOVA ou AJUSTE o padding-top: 1em; aqui, pois o padding no .flip_card_front já vai lidar com isso */
+    margin-top: 0;    /* Garante que não haja margem padrão empurrando para baixo */
+    margin-bottom: 0; /* Garante que não haja margem padrão empurrando elementos seguintes */
 }
 
-/* Estilos para as descrições (h2) dentro do FlipCard */
-.flip_card h2 {
+.flip_card h2 { /* Faça o mesmo para o h2 no verso do card */
     font-size: 1.5vw;
     color: var(--white);
-    margin: 0; /* REMOVER TODAS AS MARGENS PADRÃO */
-    padding: 0.5em; /* Pequeno padding para o texto da descrição */
-    text-align: center;
-    line-height: 1.4;
-    flex-grow: 1; /* Permite que a descrição ocupe o espaço restante */
-    display: flex; /* Transforma h2 em flex para centralizar o texto internamente */
-    align-items: center; /* Centraliza o texto verticalmente dentro do h2 */
-    justify-content: center; /* Centraliza o texto horizontalmente dentro do h2 */
-    /* border: 1px solid orange; /* Descomente para depuração do h2 */
-}
-
-/* AJUSTES PARA O BOTÃO SUBMITBTN */
-/* Se o SubmitBtn tiver um arquivo CSS próprio, essas regras devem ir lá.
-   Caso contrário, adicione-as no FlipCard.module.css se o botão for filho direto */
-.flip_card .SubmitBtn_container { /* Assumindo que SubmitBtn renderiza uma div */
-    margin-top: auto; /* Empurra o botão para o final do espaço disponível */
-    margin-bottom: 0; /* Remove margens extras inferiores */
-    /* border: 1px solid lightblue; /* Descomente para depuração do botão */
-}
-/* Se for um <button> direto: */
-.flip_card button {
-    margin-top: auto;
+    /* AJUSTE ou REMOVA o padding: .5em; se o padding do .flip_card_back for suficiente */
+    margin-top: 0;
     margin-bottom: 0;
 }
 
@@ -131,48 +89,56 @@
 /* Ajustes apenas para mobile */
 @media (max-width: 768px) {
     .flip_card {
-        perspective: 1000px;
+        perspective: 1000px; /* Aumentar a perspectiva no mobile */
         width: 20rem;
         height: 20rem;
         margin-bottom: 2rem;
     }
 
     .flip_card_inner {
-        transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+        transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1); /* Ajuste de suavização */
         transform-style: preserve-3d;
     }
 
     .flip_card_flipped .flip_card_inner {
-        transform: rotateY(-180deg);
+        transform: rotateY(-180deg); /* Mantém o cartão girado quando a classe é adicionada */
     }
 
     .flip_card_back, .flip_card_front {
         width: 20rem;
         height: 20rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1em; /* Ajuste o padding para mobile */
+        backface-visibility: hidden;
+        padding: 1.2em;
+        text-align: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     .flip_card_back {
         transform: rotateY(-180deg);
     }
 
-    .flip_card h1 {
-        font-size: 4vw;
-        padding: 0 .6em;
-    }
+    .flip_card {
+        h1 {
+            font-size: 4vw; /* Tamanho ajustado para mobile */
+            padding: 0 .6em;
+        }
 
-    .flip_card h2 {
-        font-size: 3.2vw;
-        padding: .6em;
-    }
+        h2 {
+            font-size: 3.2vw; /* Tamanho ajustado para mobile */
+            padding: .6em;
+        }
+        p {
+            font-size: 0.875rem; /* Tamanho do parágrafo ajustado */
+        }
 
-    .flip_card img {
+    
+    img {
         width: 10em;
-        height: auto;
-        margin: 0 auto;
+        height: auto; /* Mantém proporção */
+        margin: 0 auto; /* Garante centralização */
+    }
     }
 }
