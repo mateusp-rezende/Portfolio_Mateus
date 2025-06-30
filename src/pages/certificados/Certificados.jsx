@@ -11,12 +11,12 @@ function Certificados() {
   
    
      <div className={styles.contact_container}>
-      <h2>JAVA</h2>
+      <h2>JAVA - Resolução de problemas</h2>
       <img src={java} alt="" />
     </div>
 
       <div className={styles.contact_container}>
-      <h2>CodeCraft - PUC </h2>
+      <h2>CodeCraft - Desafio de Desenvolvimento </h2>
       <img src={code_craft} alt="" />
     </div>
    
