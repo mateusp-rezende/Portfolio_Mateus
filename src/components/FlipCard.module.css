@@ -88,7 +88,7 @@
 
 /* Estilos para os títulos (h1) dentro do FlipCard */
 .flip_card h1 {
-    font-size: 1.5vw;
+    font-size: 20px;
     color: var(--purple);
     margin: 0; /* REMOVER TODAS AS MARGENS PADRÃO */
     padding-top: 0.5em; /* Pequeno padding superior para afastar do topo do card */
