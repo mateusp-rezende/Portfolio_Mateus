@@ -1,41 +1,36 @@
 :root{
     --black-background: rgb(18,18,18);
-   --white: #fafafa;
+    --white: #fafafa;
     --black: #000;
     --grey: #303030;
     --purple: #5D17E9;
 }
-/*.home_products{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow: hidden;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 0;
-    padding-top: 50px;
-}*/
+
+/* Container principal da seção de produtos */
 .home_products{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow: hidden;
-    /* align-items: center;  */
-    align-items: flex-start; 
-    justify-content: space-evenly;
-    margin: 0;
-    padding-top: 50px;
+    flex-direction: row; /* Itens em linha */
+    flex-wrap: wrap;     /* Permite quebra de linha */
+    overflow: hidden;    /* Esconde qualquer conteúdo que transborde */
+    align-items: flex-start; /* Alinha o topo dos cards na mesma linha */
+    justify-content: space-evenly; /* Distribui o espaço igualmente entre e ao redor dos cards */
+    margin: 0;           /* Garante que não haja margens externas indesejadas */
+    padding-top: 50px;   /* Padding superior para afastar do Terminal */
+    gap: 2em; /* Adiciona um espaço fixo entre os itens flex. Pode substituir margin nos cards. */
+    /* border: 2px solid green; /* Para depuração: Veja a caixa do home_products */
 }
 
-
+/* Container principal da página (engloba Terminal e home_products) */
 .home_container{
-   
     margin-top: 50px;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Centraliza horizontalmente os filhos (Terminal, home_products) */
+    flex-direction: column;  /* Empilha os filhos verticalmente */
+    align-items: center;     /* Centraliza os filhos horizontalmente (se não ocuparem 100% da largura) */
+    /* border: 2px solid yellow; /* Para depuração: Veja a caixa do home_container */
 }
+
+/* Estilos de texto (fora dos cards, provavelmente para títulos do Home) */
 .home_container h1{
     font-size: 2em;
     margin-bottom: .5em;
@@ -54,27 +49,30 @@
     margin-bottom: 1.5em;
     color: var(--white);
 }
+
+/* Estilo para imagens fora dos FlipCards (se houver) */
 .home_container img{
     width: 250px;
     padding-top: 10px;
     object-fit: cover;
-   
 }
 
+/* Ajustes responsivos para telas menores */
 @media screen and (max-width: 768px){
     .home_container{
         margin-top: 0 !important;
         padding: 0 !important;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    } 
+        /* As propriedades flexbox já estão lá, não precisa repetir se forem as mesmas */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+    }
     .home_container h1{
         font-size: 1em;
         margin-bottom: .5em;
         font-weight: bold;
         padding: 0 .2em;
     }
-    
+    /* Removi a regra vazia aqui, se houver outras, mantenha */
 }
