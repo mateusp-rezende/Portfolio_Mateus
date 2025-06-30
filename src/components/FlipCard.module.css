@@ -44,12 +44,12 @@
     rgba(18, 3, 46, 0.1) 0 8px 16px,
     rgb(85, 0, 255) 0 12px 24px;
 
-    /* >>>>> PROPRIEDADES PARA CENTRALIZAR E DAR ESPAÇAMENTO <<<<< */
+    /* >>>>> PROPRIEDADES PARA ALINHAR CONTEÚDO E DAR ESPAÇAMENTO <<<<< */
     display: flex;          /* Transforma em container flexbox */
     flex-direction: column; /* Empilha os filhos verticalmente */
     align-items: center;    /* Centraliza os itens HORIZONTALMENTE */
-    justify-content: center; /* Centraliza os itens VERTICALMENTE */
-    padding: 2em;           /* Adiciona um padding uniforme para afastar das bordas */
+    justify-content: space-between; /* ALINHA O TOPO E A BASE, DISTRIBUI O RESTO */
+    padding: 1.5em;           /* Adiciona um padding uniforme para afastar das bordas */
     box-sizing: border-box; /* Garante que o padding seja incluído na width/height */
     text-align: center;     /* Garante que o texto interno seja centralizado */
 }
@@ -86,7 +86,7 @@
     display: block;
     width: 50%; /* Mantém a largura da imagem */
     height: auto;
-    max-height: 10rem; /* Limita a altura máxima da imagem */
+    max-height: 8rem; /* Limita a altura máxima da imagem, talvez 10rem fosse demais */
     object-fit: contain; /* Garante que a imagem caiba inteira */
     border-radius: 30px;
     transition: all 400ms;
@@ -96,8 +96,8 @@
 }
 
 .flip_card h1 {
-    /* >>>>> DIMINUI O TAMANHO DO H1 <<<<< */
-    font-size: 1.2vw; /* Tamanho do título para desktop (reduzido) */
+    /* >>>>> DIMINUI O TAMANHO DO H1 (AJUSTADO NOVAMENTE) <<<<< */
+    font-size: 1.1vw; /* Um pouco menor para desktop */
     color: var(--purple);
     text-align: center;
     line-height: 1.2;
@@ -123,16 +123,16 @@
     .flip_card_back, .flip_card_front {
         width: 100%;
         height: 100%;
-        padding: 1.5em; /* Padding ajustado para mobile */
+        padding: 1em; /* Padding ajustado para mobile */
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; /* Centraliza tudo para mobile também */
+        justify-content: space-between; /* Volta a alinhar topo e base para mobile */
     }
 
     .flip_card h1 {
-        /* >>>>> TAMANHO DO H1 PARA MOBILE (REDUZIDO) <<<<< */
-        font-size: 3.5vw; /* Tamanho ajustado para mobile (reduzido) */
+        /* >>>>> TAMANHO DO H1 PARA MOBILE (AJUSTADO NOVAMENTE) <<<<< */
+        font-size: 3vw; /* Um pouco menor para mobile */
         padding: 0.5em 0.6em; /* Padding ajustado para mobile */
     }
 
