@@ -5,6 +5,7 @@ import microlaser from "../../assets/microlaser.png";
 import c2b from "../../assets/c2b.png";
 import logo from "../../assets/logo.png";
 import simboloc from "../../assets/simbolo-c.png";
+import gerenciadordevagas from "../../assets/gestaoVagas.png";
 
 function Home() {
   return (
@@ -20,6 +21,13 @@ function Home() {
           nome="MICROLASER"
           Descricao="Plataforma web com: • Menu de Serviços/Produtos • Agendamento • Integração com APIs (CEP, WhatsApp) • Tech Stack: Jquery, Bootstrap 5, HTML5 semântico"
         />
+        <FlipCard
+          href="https://github.com/mateusp-rezende/GerenciadorDeVagas"
+          src={gerenciadordevagas}
+           nome="API de Gestão de Vagas"
+          Descricao="Spring Boot com cadastro de empresas e vagas, validações, JWT para autenticação e segurança com Spring Security."
+        />
+
         
         <FlipCard
           href="https://github.com/mateusp-rezende/Caixa2Bank-projeto"
