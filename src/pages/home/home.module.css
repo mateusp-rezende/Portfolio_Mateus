@@ -5,7 +5,7 @@
     --grey: #303030;
     --purple: #5D17E9;
 }
-.home_products{
+/*.home_products{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -14,6 +14,21 @@
     justify-content: space-evenly;
     margin: 0;
     padding-top: 50px;
+}*/
+
+.home_products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding-top: 50px;
+  justify-items: center;
+  align-items: start; /* isso alinha pelo topo */
+}
+.card-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .home_container{
    
