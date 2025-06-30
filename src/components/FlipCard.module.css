@@ -1,14 +1,24 @@
+/* Variáveis globais, se houver, ficam no seu arquivo :root {} */
+:root{
+    --black-background: rgb(18,18,18);
+    --white: #fafafa;
+    --black: #000;
+    --grey: #303030;
+    --purple: #5D17E9;
+}
+
+/* Container principal do FlipCard */
 .flip_card {
     perspective: 5000px;
     width: 30rem;
-    height: 30rem;
-    margin: 2em 1em;
-    
+    height: 30rem; /* Mantemos a altura fixa */
+    margin: 2em 1em; /* Margem entre os cards */
     cursor: pointer; /* Indica que o cartão é clicável */
 }
 
+/* Efeito de virar do cartão */
 .flip_card_flipped .flip_card_inner {
-    transform: rotateY(-180deg); /* Mantém o cartão girado quando a classe é adicionada */
+    transform: rotateY(-180deg); /* Gira o cartão quando a classe é adicionada */
 }
 
 .flip_card_inner {
@@ -17,81 +27,97 @@
     transform-style: preserve-3d;
 }
 
+/* Estilos para a frente e o verso do cartão */
 .flip_card_back, .flip_card_front {
     perspective: 5000px;
     width: 30rem;
     height: 30rem;
-    padding: 0 1em;
+    /* padding: 0 1em; -- Pode remover este padding aqui se for usar padding no flexbox */
     background-color: var(--black-background);
-    position: absolute;
-    backface-visibility: hidden;
-    text-align: center;
-    justify-content: center;
+    position: absolute; /* Essencial para que as faces se sobreponham e girem */
+    backface-visibility: hidden; /* Esconde a face de trás quando ela está voltada para a tela */
+    text-align: center; /* Centraliza o texto horizontalmente */
     border-radius: 16px;
-    
+
     font-family: 'Inter', sans-serif;
-    box-shadow: 
-    rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset, 
-    rgba(18, 0, 53, 0.15) 0 2px 4px, 
-    rgba(15, 1, 43, 0.1) 2px 4px, 
-    rgba(13, 9, 22, 0.1) 0 4px 8px, 
-    rgba(18, 3, 46, 0.1) 0 8px 16px, 
+    box-shadow:
+    rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset,
+    rgba(18, 0, 53, 0.15) 0 2px 4px,
+    rgba(15, 1, 43, 0.1) 2px 4px,
+    rgba(13, 9, 22, 0.1) 0 4px 8px,
+    rgba(18, 3, 46, 0.1) 0 8px 16px,
     rgb(85, 0, 255) 0 12px 24px;
+
+    /* >>>>> AS MUDANÇAS CRUCIAIS SÃO AQUI! <<<<< */
+    display: flex;          /* Transforma a frente/verso em um container flexbox */
+    flex-direction: column; /* Organiza os itens um abaixo do outro */
+    align-items: center;    /* Centraliza os itens horizontalmente (h1, img, button) */
+    justify-content: space-between; /* Distribui o espaço vertical: topo, meio, e base */
+    padding: 1.5em 1em; /* Um padding geral para o conteúdo dentro da face */
+    /* Removemos o `justify-content: center;` antigo, pois ele não tinha efeito */
 }
 
-
-
+/* Estilo para o verso do cartão (inicialmente girado) */
 .flip_card_back {
     transform: rotateY(-180deg);
 }
 
-.flip_card_back {
-    h2 {
-        display: -webkit-box;
-       
-        -webkit-box-orient: vertical;
-        white-space: normal; /* Permite quebra */
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+/* Estilos específicos para elementos dentro do FlipCard */
+.flip_card_back h2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal; /* Permite quebra de linha */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+    /* Você pode adicionar um max-height aqui se quiser limitar as linhas visíveis */
+    /* max-height: 8em; por exemplo, para 4-5 linhas dependendo do font-size */
 }
 
 
-    .flip_card   img {
-            display: block; /* Remove espaços abaixo da imagem */
-            margin: 0 auto; /* Centraliza horizontalmente */
-            width: 50%; /* Mantém sua largura atual */
-            height: auto; /* Mantém proporção */
-            border-radius: 30px;
-            /* Mantém suas outras propriedades existentes */
-            text-align: center; /* Para alinhamento adicional */
-            overflow: hidden;
-            transition: all 400ms;
+/* Estilos para a imagem dentro do FlipCard */
+.flip_card img {
+    display: block; /* Remove espaços extras abaixo da imagem */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 50%; /* Mantém sua largura atual */
+    height: auto; /* Mantém proporção */
+    border-radius: 30px;
+    object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
+    overflow: hidden;
+    transition: all 400ms;
+}
 
-    }
+/* Estilos para os títulos (h1) dentro do FlipCard */
 .flip_card h1 {
-    font-size: 1.5vw;
+    font-size: 1.5vw; /* Responsivo baseado na largura da tela */
     color: var(--purple);
-    /* REMOVA ou AJUSTE o padding-top: 1em; aqui, pois o padding no .flip_card_front já vai lidar com isso */
-    margin-top: 0;    /* Garante que não haja margem padrão empurrando para baixo */
-    margin-bottom: 0; /* Garante que não haja margem padrão empurrando elementos seguintes */
+    /* padding-top: 1em; -- Provavelmente pode ser removido, pois o padding do flexbox já ajuda */
+    margin-top: 0;    /* Remove a margem superior padrão do h1 */
+    margin-bottom: 0; /* Remove a margem inferior padrão do h1 */
+    text-align: center; /* Garante que o texto do h1 seja centralizado */
+    line-height: 1.2; /* Para controlar o espaçamento entre as linhas se o título for longo */
 }
 
-.flip_card h2 { /* Faça o mesmo para o h2 no verso do card */
-    font-size: 1.5vw;
+/* Estilos para as descrições (h2) dentro do FlipCard */
+.flip_card h2 {
+    font-size: 1.5vw; /* Responsivo baseado na largura da tela */
     color: var(--white);
-    /* AJUSTE ou REMOVA o padding: .5em; se o padding do .flip_card_back for suficiente */
-    margin-top: 0;
-    margin-bottom: 0;
+    /* padding: .5em; -- Pode ajustar ou remover, pois o padding do flexbox já ajuda */
+    margin-top: 0;    /* Remove a margem superior padrão do h2 */
+    margin-bottom: auto; /* Permite que o h2 ocupe o espaço necessário, empurrando o resto */
+    text-align: center; /* Garante que o texto da descrição seja centralizado */
+    line-height: 1.4; /* Para legibilidade da descrição */
+    flex-grow: 1; /* Permite que a descrição cresça e ocupe o espaço disponível */
+    display: flex;
+    align-items: center; /* Centraliza a descrição verticalmente se ela não preencher todo o espaço */
+    justify-content: center; /* Centraliza horizontalmente o texto da descrição */
 }
-
 
 /* Ajustes apenas para mobile */
 @media (max-width: 768px) {
     .flip_card {
-        perspective: 1000px; /* Aumentar a perspectiva no mobile */
+        perspective: 1000px; /* Ajusta a perspectiva no mobile */
         width: 20rem;
-        height: 20rem;
+        height: 20rem; /* Ajusta a altura para mobile */
         margin-bottom: 2rem;
     }
 
@@ -101,44 +127,43 @@
     }
 
     .flip_card_flipped .flip_card_inner {
-        transform: rotateY(-180deg); /* Mantém o cartão girado quando a classe é adicionada */
+        transform: rotateY(-180deg);
     }
 
     .flip_card_back, .flip_card_front {
         width: 20rem;
-        height: 20rem;
-        backface-visibility: hidden;
-        padding: 1.2em;
-        text-align: center;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        left: 0;
+        height: 20rem; /* Ajusta a altura para mobile */
+        /* padding: 1.2em; -- Ajuste este padding se necessário para o mobile */
+        /* Mantenha as novas propriedades flexbox aqui também */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em; /* Exemplo de padding ajustado para mobile */
     }
 
     .flip_card_back {
         transform: rotateY(-180deg);
     }
 
-    .flip_card {
-        h1 {
-            font-size: 4vw; /* Tamanho ajustado para mobile */
-            padding: 0 .6em;
-        }
-
-        h2 {
-            font-size: 3.2vw; /* Tamanho ajustado para mobile */
-            padding: .6em;
-        }
-        p {
-            font-size: 0.875rem; /* Tamanho do parágrafo ajustado */
-        }
-
-    
-    img {
-        width: 10em;
-        height: auto; /* Mantém proporção */
-        margin: 0 auto; /* Garante centralização */
+    .flip_card h1 {
+        font-size: 4vw; /* Tamanho ajustado para mobile */
+        padding: 0 .6em;
     }
+
+    .flip_card h2 {
+        font-size: 3.2vw; /* Tamanho ajustado para mobile */
+        padding: .6em;
+    }
+
+    /* O p não está no seu código, mas se houvesse, seria ajustado aqui */
+    /* .flip_card p {
+        font-size: 0.875rem;
+    } */
+
+    .flip_card img {
+        width: 10em;
+        height: auto;
+        margin: 0 auto;
     }
 }
