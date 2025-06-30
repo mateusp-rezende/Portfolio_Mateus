@@ -17,7 +17,7 @@
     transform-style: preserve-3d;
 }
 
-.flip_card_back, .flip_card_front {
+/*.flip_card_back, .flip_card_front {
     perspective: 5000px;
     width: 30rem;
     height: 30rem;
@@ -37,7 +37,34 @@
     rgba(13, 9, 22, 0.1) 0 4px 8px, 
     rgba(18, 3, 46, 0.1) 0 8px 16px, 
     rgb(85, 0, 255) 0 12px 24px;
+}*/
+
+.flip_card_back, .flip_card_front {
+    perspective: 5000px;
+    width: 30rem;
+    height: 30rem;
+    padding: 0 1em; /* Mantenha seu padding existente */
+    background-color: var(--black-background);
+    position: absolute;
+    backface-visibility: hidden;
+    text-align: center; /* Mantenha para centralizar o texto horizontalmente */
+    /* REMOVA esta linha se ela estiver aqui: justify-content: center; */
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+    box-shadow: /* ... suas propriedades de sombra ... */;
+
+    /* >>>>> ADICIONE ESTAS LINHAS para o layout flexbox: <<<<< */
+    display: flex; /* Transforma o elemento em um container flexbox */
+    flex-direction: column; /* Faz com que os itens se empilhem verticalmente */
+    align-items: center;   /* Centraliza os itens horizontalmente dentro do card */
+    justify-content: space-between; /* DISTRIBUI O ESPAÇO VERTICALMENTE */
+    /* Explicação do justify-content abaixo! */
+
+    /* Adicione um pouco de padding no topo e na base do conteúdo do card, se desejar */
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
+
 
 .flip_card_back {
     transform: rotateY(-180deg);
@@ -55,9 +82,7 @@
 }
 
 
-    .flip_card {
-
-        img {
+    .flip_card   img {
             display: block; /* Remove espaços abaixo da imagem */
             margin: 0 auto; /* Centraliza horizontalmente */
             width: 50%; /* Mantém sua largura atual */
@@ -67,20 +92,23 @@
             text-align: center; /* Para alinhamento adicional */
             overflow: hidden;
             transition: all 400ms;
-}
- h1 {
-    font-size: 1.5vw; /* Responsivo baseado na largura da tela */
-    color: var(--purple);
-   padding-top: 1em;
-}
 
- h2 {
-    font-size: 1.5vw; /* Responsivo baseado na largura da tela */
-    color: var(--white);
-    padding: .5em;
-}
     }
+.flip_card h1 {
+    font-size: 1.5vw;
+    color: var(--purple);
+    /* REMOVA ou AJUSTE o padding-top: 1em; aqui, pois o padding no .flip_card_front já vai lidar com isso */
+    margin-top: 0;    /* Garante que não haja margem padrão empurrando para baixo */
+    margin-bottom: 0; /* Garante que não haja margem padrão empurrando elementos seguintes */
+}
 
+.flip_card h2 { /* Faça o mesmo para o h2 no verso do card */
+    font-size: 1.5vw;
+    color: var(--white);
+    /* AJUSTE ou REMOVA o padding: .5em; se o padding do .flip_card_back for suficiente */
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 
 /* Ajustes apenas para mobile */
