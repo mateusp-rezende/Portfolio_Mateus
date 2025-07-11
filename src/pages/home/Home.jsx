@@ -6,14 +6,23 @@ import c2b from "../../assets/c2b.png";
 import logo from "../../assets/logo.png";
 import simboloc from "../../assets/simbolo-c.png";
 import gerenciadordevagas from "../../assets/gestaoVagas.png";
+import gestordepedidos from "../../assets/GestorPedidos.png";
 
 function Home() {
   return (
     
     <div className={styles.home_container}>
+      
     
     <Terminal/>
       <section className={styles.home_products}>
+
+        <FlipCard
+    href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos"
+    src={gestordepedidos} 
+    nome="GESTOR DE PEDIDOS - MICROSSERVIÇOS"
+    Descricao="API para gestão de produtos, clientes e pedidos em arquitetura de microsserviços • Service Discovery com Eureka • Roteamento com API Gateway • Comunicação síncrona com OpenFeign • Tech Stack: Spring Cloud, Spring Boot (Java 17), JPA, MySQL"
+/>
   
          <FlipCard
           href="https://microlaser.vercel.app/"
