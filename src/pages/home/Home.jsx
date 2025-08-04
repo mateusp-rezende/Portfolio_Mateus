@@ -19,6 +19,7 @@ function Home() {
 
         <FlipCard
     href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos"
+    href="https://alfred-gerenciador.vercel.app/"
     src={gestordepedidos} 
     nome="GESTOR DE PEDIDOS - MICROSSERVIÇOS"
     Descricao="API para gestão de produtos, clientes e pedidos em arquitetura de microsserviços •  Eureka • API Gateway •  OpenFeign • Tech Stack: Spring Cloud, Spring Boot , JPA, MySQL"
