@@ -18,8 +18,7 @@ function Home() {
       <section className={styles.home_products}>
 
         <FlipCard
-    href="https://alfred-gerenciador.vercel.app/"
-      <p>Projeto completo: https://github.com/mateusp-rezende/gestor-pedidos-microservicos</p>
+    href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos"
     src={gestordepedidos} 
     nome="ALFRED GERENCIADOR"
    
