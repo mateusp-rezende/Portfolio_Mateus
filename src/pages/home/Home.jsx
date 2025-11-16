@@ -7,7 +7,7 @@ import logo from "../../assets/logo.png";
 import simboloc from "../../assets/simbolo-c.png";
 import gerenciadordevagas from "../../assets/gestaoVagas.png";
 import gestordepedidos from "../../assets/GestorPedidos.png";
-import zelusImg from "../../assets/zelus.png";
+import zelusImg from "../../assets/zelus.png"; 
 
 function Home() {
   return (
