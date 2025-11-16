@@ -15,6 +15,34 @@
     margin: 0;
     padding-top: 50px;
 }*/
+
+/* ... mantenha o código anterior ... */
+
+.section_title {
+    width: 100%;
+    text-align: center;
+    margin: 3rem 0 1rem 0;
+    font-size: 1.5rem;
+    color: var(--white);
+    border-bottom: 1px solid var(--grey);
+    line-height: 0.1em;
+    max-width: 80%;
+}
+
+.section_title span {
+    background: #121212; /* Mesma cor do fundo do site */
+    padding: 0 10px;
+    color: var(--purple);
+    font-weight: bold;
+}
+
+.destaque_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
 .home_products{
     display: flex;
     flex-direction: row;
