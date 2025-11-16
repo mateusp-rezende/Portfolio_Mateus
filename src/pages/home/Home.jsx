@@ -2,14 +2,13 @@ import styles from './home.module.css';
 import FlipCard from "../../components/FlipCard";
 import Terminal from "../../components/terminal";
 
-// Seus imports de imagem existentes
 import microlaser from "../../assets/microlaser.png";
 import c2b from "../../assets/c2b.png";
 import logo from "../../assets/logo.png";
 import simboloc from "../../assets/simbolo-c.png";
 import gerenciadordevagas from "../../assets/gestaoVagas.png";
 import gestordepedidos from "../../assets/GestorPedidos.png";
-// Importe a imagem do Zelus (certifique-se de ter o arquivo na pasta assets)
+
 import zelusImg from "../../assets/zelus.png"; 
 
 function Home() {
