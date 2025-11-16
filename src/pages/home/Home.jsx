@@ -2,13 +2,14 @@ import styles from './home.module.css';
 import FlipCard from "../../components/FlipCard";
 import Terminal from "../../components/terminal";
 
+// Seus imports
 import microlaser from "../../assets/microlaser.png";
 import c2b from "../../assets/c2b.png";
 import logo from "../../assets/logo.png";
 import simboloc from "../../assets/simbolo-c.png";
 import gerenciadordevagas from "../../assets/gestaoVagas.png";
 import gestordepedidos from "../../assets/GestorPedidos.png";
-
+// Importe a imagem do Zelus que você tirou o print
 import zelusImg from "../../assets/zelus.png"; 
 
 function Home() {
@@ -16,19 +17,42 @@ function Home() {
     <div className={styles.home_container}>
       <Terminal/>
       
-      {/* --- SESSÃO DE DESTAQUE --- */}
+      {/* Título da Seção */}
       <h2 className={styles.section_title}><span>PROJETO DESTAQUE</span></h2>
       
-      <div className={styles.destaque_area}>
+      <div className={styles.destaque_container}>
+        
+        {/* ESQUERDA: O FlipCard Interativo */}
         <FlipCard
           href="https://zelus-sgp.vercel.app/"
           src={zelusImg} 
           nome="ZELUS - SGP"
-          Descricao="Plataforma SaaS para hospitais que elimina prejuízos com equipamentos. Possui Dashboard Financeiro, Controle de Manutenções e Segurança avançada de dados (RLS). • Stack: React, Supabase, TypeScript. • Demo: admin@zelus.demo / 123456"
+          Descricao="Plataforma SaaS para gestão hospitalar. Dashboard em tempo real, controle de manutenção e segurança RLS. • Demo: admin@zelus.demo / 123456"
         />
+
+        {/* DIREITA: O Card Fixo com a História */}
+       <div className={styles.story_card}>
+            <h3>Sobre o Sistema</h3>
+            <p>
+                O <strong>Zelus</strong> é uma solução SaaS projetada para resolver a gestão ineficiente de ativos em ambientes hospitalares, focando na prevenção de perdas e controle de custos.
+            </p>
+            <p>
+                <strong>Funcionalidades Chave:</strong>
+                <br />
+                • Dashboard financeiro em tempo real.
+                <br />
+                • Rastreamento completo de manutenções.
+                <br />
+                • Controle de acesso granular (RBAC).
+            </p>
+            <p>
+                <strong>Tecnologias:</strong> Construído com a robustez do <strong>React</strong> e <strong>TypeScript</strong> no frontend, e a segurança do <strong>PostgreSQL (Supabase)</strong> com RLS no backend.
+            </p>
+        </div>
+
       </div>
 
-      {/* --- DEMAIS PROJETOS --- */}
+      {/* Título dos Outros Projetos */}
       <h2 className={styles.section_title}><span>OUTROS PROJETOS</span></h2>
       
       <section className={styles.home_products}>
@@ -36,42 +60,38 @@ function Home() {
           href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos"
           src={gestordepedidos} 
           nome="ALFRED GERENCIADOR"
-          Descricao="API para gestão de produtos, clientes e pedidos em arquitetura de microsserviços •  Eureka • API Gateway •  OpenFeign • Tech Stack: Spring Cloud, Spring Boot , JPA, MySQL "
+          Descricao="API para gestão de produtos e pedidos em arquitetura de microsserviços."
         />
-  
+        {/* ... seus outros FlipCards continuam aqui ... */}
          <FlipCard
           href="https://microlaser.vercel.app/"
           src={microlaser}
           nome="MICROLASER"
-          Descricao="Plataforma web com: • Menu de Serviços/Produtos • Agendamento • Integração com APIs (CEP, WhatsApp) • Tech Stack: Jquery, Bootstrap 5, HTML5 semântico"
+          Descricao="Plataforma web com agendamento e integração com APIs."
         />
-        
-        <FlipCard
+         <FlipCard
           href="https://github.com/mateusp-rezende/GerenciadorDeVagas"
           src={gerenciadordevagas}
            nome="API GESTÃO DE VAGAS"
-         Descricao="API de cadastro e gerenciamento de empresas e vagas de emprego • Validação e tratamento de erros • Relacionamento entre entidades • Segurança com autenticação JWT • Tech Stack: Spring Boot (Java 17), JPA, Spring Security, REST API"
+         Descricao="API de cadastro e gerenciamento de vagas com Spring Security."
         />
-
         <FlipCard
           href="https://github.com/mateusp-rezende/Caixa2Bank-projeto"
           src={c2b}
           nome="CAIXA 2 BANK"
-          Descricao="Sistema bancário didático com: • Painel administrativo • Transações financeiras • Histórico operacional • Tech Stack: Spring Boot (Java 11), MVC Pattern, REST API, Fetch API"
+          Descricao="Sistema bancário didático com painel administrativo."
         />
-
         <FlipCard
           href="https://mateus-projetos.vercel.app/"
           src={logo}
           nome="PORTFÓLIO"
-          Descricao="Single Page Application construída com: • React 18 • Vite • CSS Modules • Framer Motion (animações). Exibe meus projetos com carregamento otimizado, dark/light mode e design system consistente, demonstrando boas práticas de desenvolvimento frontend"
+          Descricao="SPA construída com React, Vite e CSS Modules."
        />
-
         <FlipCard
           href="https://github.com/mateusp-rezende/biblioteca-em-C"
           src={simboloc}
           nome="BIBLIOTECA EM C"
-          Descricao="Biblioteca em C puro implementando estruturas de dados e algoritmos avançados."
+          Descricao="Biblioteca em C puro com estruturas de dados avançadas."
        />
       </section>
     </div>
