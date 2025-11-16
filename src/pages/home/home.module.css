@@ -16,7 +16,7 @@
     padding-top: 50px;
 }*/
 
-/* ... mantenha o código anterior ... */
+
 
 .section_title {
     width: 100%;
@@ -105,4 +105,98 @@
         padding: 0 .2em;
     }
     
+}
+
+/* ... seu código anterior ... */
+
+/* Título das Sessões */
+.section_title {
+    width: 100%;
+    text-align: center;
+    margin: 4rem 0 3rem 0;
+    font-size: 1.8rem;
+    color: var(--white);
+    border-bottom: 1px solid #333;
+    line-height: 0.1em;
+    max-width: 90%;
+}
+
+.section_title span {
+    background: #121212; /* A cor do fundo do seu site */
+    padding: 0 20px;
+    color: var(--purple);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Container do Destaque (Flex Row) */
+.destaque_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem; /* Espaço entre os dois cards */
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 4rem;
+    flex-wrap: wrap; /* Para cair para baixo no celular */
+}
+
+/* O Card Fixo de Texto */
+.story_card {
+    width: 30rem; /* Mesma largura do FlipCard */
+    height: 30rem; /* Mesma altura do FlipCard */
+    background-color: var(--black-background); /* Usa sua variável de cor */
+    border-radius: 16px;
+    padding: 2.5rem;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    
+    /* A mesma sombra bonita que você usa no FlipCard */
+    box-shadow: 
+        rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset, 
+        rgba(18, 0, 53, 0.15) 0 2px 4px, 
+        rgba(15, 1, 43, 0.1) 2px 4px, 
+        rgba(13, 9, 22, 0.1) 0 4px 8px, 
+        rgba(18, 3, 46, 0.1) 0 8px 16px, 
+        rgba(93, 23, 233, 0.25) 0 12px 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.story_card h3 {
+    color: var(--purple);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.story_card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.story_card strong {
+    color: var(--white);
+    font-weight: bold;
+}
+
+/* Ajuste para Celular */
+@media (max-width: 1100px) {
+    .destaque_container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .story_card {
+        width: 20rem; /* Mesma largura do FlipCard Mobile */
+        height: auto; /* Altura automática para caber o texto */
+        min-height: 20rem;
+    }
 }
