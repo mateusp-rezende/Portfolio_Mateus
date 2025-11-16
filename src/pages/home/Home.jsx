@@ -7,6 +7,7 @@ import logo from "../../assets/logo.png";
 import simboloc from "../../assets/simbolo-c.png";
 import gerenciadordevagas from "../../assets/gestaoVagas.png";
 import gestordepedidos from "../../assets/GestorPedidos.png";
+import zelusImg from "../../assets/zelus.png";
 
 function Home() {
   return (
@@ -16,6 +17,18 @@ function Home() {
     
     <Terminal/>
       <section className={styles.home_products}>
+
+        <FlipCard
+          href="https://zelus-sgp.vercel.app/"
+          src={zelusImg} 
+          nome="ZELUS - SGP"
+          Descricao="Sistema de Gestão de Patrimônio Hospitalar SaaS. 
+          • Dashboard Analytics em Real-time 
+          • Segurança RLS (Row Level Security) no Banco
+          • Multi-tenancy & RBAC (Admin/User)
+          • Tech Stack: React, TypeScript, Supabase, TanStack Query, Shadcn/ui.
+          • Credenciais Demo: joao@zelus.demo / 123456"
+        />
 
         <FlipCard
     href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos"
