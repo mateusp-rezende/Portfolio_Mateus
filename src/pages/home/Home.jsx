@@ -22,12 +22,7 @@ function Home() {
           href="https://zelus-sgp.vercel.app/"
           src={zelusImg} 
           nome="ZELUS - SGP"
-          Descricao="Sistema de Gestão de Patrimônio Hospitalar SaaS. 
-          • Dashboard Analytics em Real-time 
-          • Segurança RLS (Row Level Security) no Banco
-          • Multi-tenancy & RBAC (Admin/User)
-          • Tech Stack: React, TypeScript, Supabase, TanStack Query, Shadcn/ui.
-          • Credenciais Demo: joao@zelus.demo / 123456"
+          Descricao="Plataforma SaaS para hospitais que elimina prejuízos com equipamentos. Possui Dashboard Financeiro, Controle de Manutenções e Segurança avançada de dados (RLS). \n • Stack: React, Supabase, TypeScript. \n • Demo: joao@zelus.demo / 123456"
         />
 
         <FlipCard
