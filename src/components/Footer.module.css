@@ -1,58 +1,62 @@
-.footer{
-    background-color: var(--black-background);
+/* Footer.module.css */
+.footer {
+    background-color: var(--black-background, #000); /* Fallback caso a var falhe */
     color: #fff;
-    padding: 3em;
+    padding: 3rem 1rem;
     text-align: center;
-    width: 100%;
-
-}
-
-img{
-    width: 100px;
-}
-.list{
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-}
-.list li svg{
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-.list li{
-    margin: 0 1em ;
-    color: #fff;
-    text-decoration: none;
-}
-.list li:hover{
-    color:#5D17E9;
     
+    /* Flexbox para alinhar tudo verticalmente (Lista -> Copyright -> Link) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.copy_right{
-    margin-top: 2em;
-    margin-bottom: 3em;
-}
-.copy_right span{
-    font-weight: bolder;
-    color:#5D17E9;
+.list {
+    display: flex;
+    justify-content: center; /* O segredo: centraliza os ícones */
+    align-items: center;
+    gap: 2rem; /* Espaçamento fixo e elegante entre os ícones */
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0; /* Espaço abaixo dos ícones */
 }
 
-a{
+.list li svg {
+    font-size: 2rem; /* Aumentei um pouco para dar destaque */
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Efeito Hover Premium */
+.list li svg:hover {
+    color: #5D17E9;
+    transform: translateY(-5px); /* O ícone "flutua" ao passar o mouse */
+}
+
+.copy_right {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.copy_right strong {
+    color: #5D17E9;
+}
+
+/* Estilizando o Link do desenvolvedor */
+.devLink {
     font-size: 12px;
     font-weight: bold;
     color: #fff;
-    transition: 0.5s;
     text-decoration: none;
-    margin-bottom: 2em;
-    cursor: pointer; 
-   
-}
-a:hover{
-  color: #5D17E9;;
+    transition: color 0.3s;
+    opacity: 0.7;
 }
 
-
-
-
+.devLink:hover {
+    color: #5D17E9;
+    opacity: 1;
+}

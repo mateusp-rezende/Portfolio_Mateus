@@ -1,59 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  /* Core Colors */
+  --bg-dark: #0a0a0a;
+  /* Deeper black for modern feel */
+  --bg-card: #121212;
+  /* Original black background */
+  --bg-glass: rgba(18, 18, 18, 0.8);
+
+  --primary: #5D17E9;
+  /* Original Purple */
+  --primary-glow: rgba(93, 23, 233, 0.5);
+
+  --text-main: #ffffff;
+  --text-muted: #a3a3a3;
+  --border: #333333;
+
+  /* Spacing */
+  --nav-height: 70px;
+  --container-width: 1200px;
+
+  /* Animation */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+}
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
 }
 
-html, body, #root {
-  height: 100%;
-  width: 100%;
+html {
+  scroll-behavior: smooth;
 }
-
 
 body {
-  overflow-y: auto;
-  overflow-x: hidden; /* Só previne scroll horizontal */
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  /* Modern default */
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
+  line-height: 1.6;
+  padding-top: var(--nav-height);
+  /* Prevent navbar overlap */
 }
 
-/* Garante que imagens não causem overflow */
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Correção segura para scrollbars */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: var(--bg-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: var(--border);
   border-radius: 4px;
 }
 
-/* Firefox */
-@supports (scrollbar-width: thin) {
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
 
-/* Classe utilitária para containers seguros */
-.container-safe {
+/* Typography Utilities */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Common Layout Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+.min_height {
+  min-height: 80vh;
+  /* Ensures footer sticks to bottom reasonably */
 }

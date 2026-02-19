@@ -1,76 +1,159 @@
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--black-background);
-    padding: 1rem 2rem;
-    width: 100%;
-    position: relative;
-    z-index: 100;
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  display: flex;
+  justify-content: center;
+  /* Center the container */
+  padding: 0 1.5rem;
+  /* Outer padding */
+}
+
+/* 
+  1. Flexbox with space-between: Pushes Logo to left, List to right 
+  2. Align items center
+*/
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.image {
+  width: 45px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  /* Logo fixed to extreme left by space-between */
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
+
+/* 
+  3. Group links in a ul 
+  4. Aligned to extreme right (handled by navContainer space-between)
+  5. Fixed gap (24px approx 1.5rem)
+*/
+.list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  /* 24px */
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  position: relative;
+}
+
+.link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  /* Slightly smaller for tighter look */
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+/* Underline effect on hover */
+.link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.menuToggle {
+  display: none;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+    justify-content: space-between;
+    /* Ensure toggle and logo are apart */
   }
-  
+
+  .navContainer {
+    padding: 0 0.5rem;
+  }
+
   .menuToggle {
-    display: none;
-    cursor: pointer;
-    z-index: 101;
-    color: white;
-  }
-  
-  .image {
-    width: 7rem;
-    height: auto;
-    z-index: 100;
-  }
-  
-  .list {
     display: flex;
-    list-style: none;
-    gap: 1.5rem;
+    /* Visible on mobile */
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    border-radius: 8px;
   }
-  
-  /* Estilos para mobile */
-  @media (max-width: 768px) {
-    .menuToggle {
-      display: block;
-      
-    }
-  
-    .list {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 70%;
-      height: 100vh;
-      background: #33088b;
-      flex-direction: column;
-      padding: 5rem 1rem;
-      transition: all 0.3s ease;
-      z-index: 99;
-    }
-    .image {
-        width: 6rem;
-        height: auto;
-        z-index: 100;
-      }
-  
-    .listOpen {
-      left: 0;
-    }
-  
-    .menuOverlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.123);
-      z-index: 98;
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
-  
-    .overlayOpen {
-      width: 100%;
-      opacity: 1;
-    }
+
+  .list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    /* Fixed width drawer */
+    background: var(--bg-card);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 6rem;
+    gap: 2rem;
+    /* Vertical gap for mobile */
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
   }
+
+  .listOpen {
+    transform: translateX(0);
+  }
+
+  .link {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+
+  .item {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  }
+}

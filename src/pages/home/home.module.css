@@ -1,202 +1,144 @@
-:root{
-    --black-background: rgb(18,18,18);
-   --white: #fafafa;
-    --black: #000;
-    --grey: #303030;
-    --purple: #5D17E9;
-}
-/*.home_products{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow: hidden;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 0;
-    padding-top: 50px;
-}*/
-
-
-
-.section_title {
-    width: 100%;
-    text-align: center;
-    margin: 3rem 0 1rem 0;
-    font-size: 1.5rem;
-    color: var(--white);
-    border-bottom: 1px solid var(--grey);
-    line-height: 0.1em;
-    max-width: 80%;
-}
-
-.section_title span {
-    background: #121212; /* Mesma cor do fundo do site */
-    padding: 0 10px;
-    color: var(--purple);
-    font-weight: bold;
-}
-
-.destaque_area {
+/* Main Container */
+.home_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
     width: 100%;
-}
-.home_products{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow: hidden;
-    /* align-items: center;  */
-    align-items: flex-start; 
-    justify-content: space-evenly;
-    margin: 0;
-    padding-top: 50px;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+    overflow-x: hidden;
 }
 
-
-.home_container{
-   
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-.home_container h1{
-    font-size: 2em;
-    margin-bottom: .5em;
-    font-weight: bold;
-    color: var(--purple);
-    padding: 0 .2em;
-}
-
-.home_container h2{
-    font-size: .7em;
-    margin-bottom: .5em;
-    color: var(--white);
-    padding: 0 .2em;
-}
-.home_container p{
-    margin-bottom: 1.5em;
-    color: var(--white);
-}
-.home_container img{
-    width: 250px;
-    padding-top: 10px;
-    object-fit: cover;
-   
-}
-
-@media screen and (max-width: 768px){
-    .home_container{
-        margin-top: 0 !important;
-        padding: 0 !important;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    } 
-    .home_container h1{
-        font-size: 1em;
-        margin-bottom: .5em;
-        font-weight: bold;
-        padding: 0 .2em;
-    }
-    
-}
-
-/* ... seu código anterior ... */
-
-/* Título das Sessões */
+/* Section Titles */
 .section_title {
     width: 100%;
     text-align: center;
     margin: 4rem 0 3rem 0;
-    font-size: 1.8rem;
-    color: var(--white);
-    border-bottom: 1px solid #333;
-    line-height: 0.1em;
-    max-width: 90%;
+    max-width: 1200px;
+    position: relative;
+    z-index: 1;
 }
 
 .section_title span {
-    background: #121212; /* A cor do fundo do seu site */
-    padding: 0 20px;
-    color: var(--purple);
-    font-weight: bold;
+    background: linear-gradient(90deg, var(--primary), #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: 800;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
 }
 
-/* Container do Destaque (Flex Row) */
+.section_title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* Featured Project Section (Destaque) */
 .destaque_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem; /* Espaço entre os dois cards */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two columns on desktop */
+    gap: 4rem;
     width: 100%;
     max-width: 1200px;
-    margin-bottom: 4rem;
-    flex-wrap: wrap; /* Para cair para baixo no celular */
+    padding: 0 1.5rem;
+    margin-bottom: 6rem;
+    align-items: center;
+    /* Vertically center */
 }
 
-/* O Card Fixo de Texto */
+/* Story Card (Text Description) */
 .story_card {
-    width: 30rem; /* Mesma largura do FlipCard */
-    height: 30rem; /* Mesma altura do FlipCard */
-    background-color: var(--black-background); /* Usa sua variável de cor */
-    border-radius: 16px;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border */
+    border-radius: 20px;
     padding: 2.5rem;
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    
-    /* A mesma sombra bonita que você usa no FlipCard */
-    box-shadow: 
-        rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset, 
-        rgba(18, 0, 53, 0.15) 0 2px 4px, 
-        rgba(15, 1, 43, 0.1) 2px 4px, 
-        rgba(13, 9, 22, 0.1) 0 4px 8px, 
-        rgba(18, 3, 46, 0.1) 0 8px 16px, 
-        rgba(93, 23, 233, 0.25) 0 12px 24px;
-
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    /* Deep shadow */
+    height: 100%;
+    /* Match height of flip card if needed, or auto */
+    min-height: 450px;
+    /* Match flip card height */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
 }
 
 .story_card h3 {
-    color: var(--purple);
-    font-size: 1.8rem;
+    color: var(--primary);
+    font-size: 2rem;
     margin-bottom: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .story_card p {
     font-size: 1.1rem;
-    line-height: 1.6;
-    color: #e0e0e0;
-    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
 }
 
 .story_card strong {
-    color: var(--white);
-    font-weight: bold;
+    color: var(--text-main);
+    font-weight: 600;
 }
 
-/* Ajuste para Celular */
-@media (max-width: 1100px) {
+/* Projects Grid */
+.home_products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Slightly narrower column min-width */
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+
+    /* Tablet/Smaller Desktop */
     .destaque_container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        /* Stack on smaller screens */
+        gap: 3rem;
+    }
+
+    .story_card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* Mobile */
+    .section_title span {
+        font-size: 1.5rem;
+    }
+
+    .home_products {
+        grid-template-columns: 1fr;
+        /* Single column on mobile proper */
         gap: 2rem;
     }
-    
-    .story_card {
-        width: 20rem; /* Mesma largura do FlipCard Mobile */
-        height: auto; /* Altura automática para caber o texto */
-        min-height: 20rem;
+
+    .destaque_container {
+        gap: 2rem;
     }
 }

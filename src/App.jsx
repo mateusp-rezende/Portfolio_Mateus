@@ -6,11 +6,13 @@ import Container from './components/Container';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Certificados from './pages/certificados/Certificados';
+import ParticleBackground from './components/ParticleBackground';
 
 
 function App() {
   return (
     <Router>
+      <ParticleBackground />
       <NavBar />
       <Container customClass="min_height">
         <Routes>

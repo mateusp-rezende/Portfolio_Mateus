@@ -1,49 +1,54 @@
+.btn {
+  margin-top: auto;
+  /* Push to bottom if in flex column */
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .btn a {
-  background-color: var(--purple) ;
-  border-radius: 15px;
-  border-style: initial;
-  border-width: 0;
-  
-  line-height: 24px;
-  font-size: 1em;
-  padding: 1em 4em;
+  background-color: var(--primary);
+  border-radius: 8px;
+  /* Matching other radius */
+  border: none;
+
+  line-height: 1.5;
+  font-size: 1rem;
+  padding: 0.8em 2em;
   text-decoration: none;
-  transition: all 200ms;
-  transition-behavior: normal;
+  color: #fff;
+  font-weight: 600;
+
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(93, 23, 233, 0.39);
 }
 
 .btn a:hover {
-  text-decoration: none;
-  transform: scale(1.05) rotate(-1deg);
-  color: #ffffff;
-  box-shadow: 
-  rgba(0, 0, 0, 0.1) 0 -10px 15px -8px inset, 
-  rgba(18, 0, 53, 0.15) 0 2px 4px, 
-  rgba(15, 1, 43, 0.1) 2px 4px, 
-  rgba(13, 9, 22, 0.1) 0 4px 8px, 
-  rgba(18, 3, 46, 0.1) 0 8px 16px, 
-  rgba(93, 23, 233, 0.25) 0 12px 24px;
-
-
-}
-.btn{
-  margin: 2em;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 23, 233, 0.23);
+  background-color: #4a12ba;
 }
 
 /* Ajuste o tamanho, padding e margin-top do botão para dispositivos móveis */
 @media (max-width: 768px) {
   .btn a {
-      padding: 0.5em 2em; /* Reduz o padding para tornar o botão menor */
-      font-size: 0.8em; /* Reduz o tamanho da fonte para telas menores */
-      line-height: 20px; /* Ajusta o line-height para corresponder ao tamanho reduzido */
-      margin-top: 1.5em; /* Adiciona margin-top para afastar o botão do topo */
+    padding: 0.5em 2em;
+    /* Reduz o padding para tornar o botão menor */
+    font-size: 0.8em;
+    /* Reduz o tamanho da fonte para telas menores */
+    line-height: 20px;
+    /* Ajusta o line-height para corresponder ao tamanho reduzido */
+    margin-top: 1.5em;
+    /* Adiciona margin-top para afastar o botão do topo */
   }
 }
 
 @media screen and (min-width: 768px) {
   .btn a {
-      line-height: 16px;
-      text-align: center;
+    line-height: 16px;
+    text-align: center;
   }
 }
 
