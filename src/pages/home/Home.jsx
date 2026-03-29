@@ -73,6 +73,7 @@ Se deseja ver o produto funcional utilizado por clientes reais (versão SaaS/Sup
         {/* DIREITA: O Card Fixo com a Explicação Técnica e de Negócio */}
         <motion.div className={styles.story_card} variants={fadeInUp}>
             <h3>Sobre o Ecossistema Alfred</h3>
+            <a href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos" target="_blank"> Acesse a descrição detalhada no GitHub</a>
             <p>
                 Este é meu projeto de maior orgulho, pois resolve um <strong>problema real de microempreendedores</strong>: a gestão eficiente de pedidos, clientes e relatórios financeiros.
             </p>
