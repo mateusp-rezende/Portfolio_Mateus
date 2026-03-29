@@ -60,7 +60,7 @@ function Home() {
         {/* ESQUERDA: O FlipCard Interativo do ALFRED */}
         <motion.div variants={fadeInUp}>
           <FlipCard
-              href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos"
+              href="https://alfred.rznd.tec.br"
               src={gestordepedidos} 
               nome="ALFRED - ECOSSISTEMA"
               Descricao="Este projeto possui duas versões distintas. O botão roxo abaixo leva ao código fonte da versão Arquitetura de Microsserviços (Java/Spring), ideal para análise técnica.
