@@ -87,6 +87,8 @@ function Home() {
                 <br/>
                 
             </p>
+          <a href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos" target="_blank"> Acesse a descrição detalhada no GitHub</a>
+                
         </motion.div>
 
       </motion.div>
