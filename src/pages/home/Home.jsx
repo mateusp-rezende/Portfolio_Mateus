@@ -64,15 +64,11 @@ function Home() {
               src={gestordepedidos} 
               nome="ALFRED - ECOSSISTEMA"
               Descricao="Este projeto possui duas versões distintas. O link abaixo leva ao código fonte da versão Arquitetura de Microsserviços (Java/Spring), ideal para análise técnica.
-
-Se deseja ver o produto funcional utilizado por clientes reais (versão SaaS/Supabase), clique no botão roxo ">
+              https://github.com/mateusp-rezende/gestor-pedidos-microservicos Se deseja ver o produto funcional utilizado por clientes reais (versão SaaS/Supabase), clique no botão roxo ">
             
             
               </FlipCard>
-          <div>
-            <a href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos" target="_blank"> Acesse a descrição detalhada no GitHub</a>
-                
-          </div>
+       
         </motion.div>
 
         {/* DIREITA: O Card Fixo com a Explicação Técnica e de Negócio */}
