@@ -67,9 +67,12 @@ function Home() {
 
 Se deseja ver o produto funcional utilizado por clientes reais (versão SaaS/Supabase), clique no botão roxo ">
             
+            
+              </FlipCard>
+          <div>
             <a href="https://github.com/mateusp-rezende/gestor-pedidos-microservicos" target="_blank"> Acesse a descrição detalhada no GitHub</a>
                 
-              </FlipCard>
+          </div>
         </motion.div>
 
         {/* DIREITA: O Card Fixo com a Explicação Técnica e de Negócio */}
