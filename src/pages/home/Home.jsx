@@ -57,12 +57,12 @@ function Home() {
         variants={staggerContainer}
       >
         
-        {/* ESQUERDA: O FlipCard Interativo do ALFRED */}
+        {/* ESQUERDA: O FlipCard Interativo do Prumo */}
         <motion.div variants={fadeInUp}>
           <FlipCard
-              href="https://alfred.rznd.tec.b"
+              href="https://prumo.rznd.tec.br"
               src={gestordepedidos} 
-              nome="ALFRED - ECOSSISTEMA"
+              nome="PRUMO - ECOSSISTEMA"
               Descricao="Este projeto possui duas versões distintas. O link abaixo leva ao código fonte da versão Arquitetura de Microsserviços (Java/Spring), ideal para análise técnica.
               https://github.com/mateusp-rezende/gestor-pedidos-microservicos Se deseja ver o produto funcional utilizado por clientes reais (versão SaaS/Supabase), clique no botão roxo ">
             
@@ -73,7 +73,7 @@ function Home() {
 
         {/* DIREITA: O Card Fixo com a Explicação Técnica e de Negócio */}
         <motion.div className={styles.story_card} variants={fadeInUp}>
-            <h3>Sobre o Ecossistema Alfred</h3>
+            <h3>Sobre o Ecossistema Prumo</h3>
             <p>
                 Este é meu projeto de maior orgulho, pois resolve um <strong>problema real de microempreendedores</strong>: a gestão eficiente de pedidos, clientes e relatórios financeiros.
             </p>
